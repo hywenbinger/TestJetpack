@@ -35,7 +35,7 @@ class RoomActivity : AppCompatActivity() {
     }
 
     fun onUpdateClick(view: View) {
-        val word = Word("hi", "你好", false)
+        val word = Word("world", "世界", false)
         word.id = mET.text.toString().toInt()
         mViewModel.update(word)
     }
