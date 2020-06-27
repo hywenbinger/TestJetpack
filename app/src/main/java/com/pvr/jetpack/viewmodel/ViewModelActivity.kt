@@ -20,7 +20,9 @@ class ViewModelActivity : AppCompatActivity() {
 
 //        mViewModel = ViewModelProviders.of(this).get(MyViewModel::class.java)
 
-        mViewModel = ViewModelProvider(this)[MyViewModel::class.java]
+//        mViewModel = ViewModelProvider(this)[MyViewModel::class.java]
+
+        mViewModel = ViewModelProvider(this).get(MyViewModel::class.java)
 
         Utils.logI("onCreate, ${mViewModel.mUserName}")
         mNameTV.text = mViewModel.mUserName
