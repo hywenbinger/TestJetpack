@@ -18,16 +18,16 @@ class LiveDataActivity : AppCompatActivity() {
         setContentView(R.layout.activity_live_data)
         mViewModel = ViewModelProvider(this)[UserViewModel::class.java]
 
-        mViewModel.mUserName.observe(this,
+        mViewModel.userName.observe(this,
             Observer<String> { name ->
                 mNameTV.text = name
-                Utils.logI("getName, ${mViewModel.mUserName.value}")
+                Utils.logI("getName, ${mViewModel.userName.value}")
             })
     }
 
     fun onBtnClick(view: View) {
-        mViewModel.mUserName.value = "wayne"
-        Utils.logI("onBtnClick, ${mViewModel.mUserName.value}")
+        mViewModel.setUserName("wayne")
+        Utils.logI("onBtnClick, ${mViewModel.userName.value}")
     }
 
 
