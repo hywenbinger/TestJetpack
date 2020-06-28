@@ -26,8 +26,9 @@ class LiveDataActivity : AppCompatActivity() {
     }
 
     fun onBtnClick(view: View) {
-        mViewModel.setUserName("wayne")
-        Utils.logI("onBtnClick, ${mViewModel.userName.value}")
+        mViewModel.setUserNameCoroutine()
+//        mViewModel.setUserName("wayne")
+//        Utils.logI("onBtnClick, ${mViewModel.userName.value}")
     }
 
 
