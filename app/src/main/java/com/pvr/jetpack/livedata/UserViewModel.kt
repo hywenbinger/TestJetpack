@@ -12,7 +12,12 @@ import kotlinx.coroutines.withContext
 
 class UserViewModel : ViewModel() {
 
-    //    val mUserName: MutableLiveData<String> = MutableLiveData<String>()
+//    private val mUserName: MutableLiveData<String> = MutableLiveData<String>()
+
+//    private val mUserName: MutableLiveData<String> by lazy {
+//        MutableLiveData<String>().also { it.value = "" }
+//    }
+
     private val mUserName = MutableLiveData<String>("")
 
     val userName: LiveData<String>
