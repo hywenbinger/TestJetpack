@@ -9,6 +9,19 @@ class BindingViewModel : ViewModel() {
 
     fun setNumber() {
         mNumber.value = 100
+
+//        mListLiveData.value.add("")
+//        mList.value.add("")
+
+        mStringList.add("")
     }
+
+    val mListLiveData by lazy {
+        MutableLiveData<MutableList<String>>().also { it.value = mutableListOf() }
+    }
+
+    val mList = MutableLiveData<MutableList<String>>(mutableListOf<String>())
+
+    val mStringList = mutableListOf<String>()
 
 }

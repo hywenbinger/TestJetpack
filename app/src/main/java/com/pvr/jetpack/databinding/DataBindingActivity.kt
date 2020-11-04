@@ -11,6 +11,9 @@ import com.pvr.jetpack.Utils
 import com.pvr.jetpack.livedata.UserViewModel
 import kotlinx.android.synthetic.main.activity_live_data.*
 
+/**
+ * https://www.jianshu.com/p/bd9016418af2 -- Android DataBinding 从入门到进阶
+ */
 class DataBindingActivity : AppCompatActivity() {
 
     private val mViewModel by lazy {
