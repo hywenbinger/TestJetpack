@@ -5,37 +5,105 @@
 
     <data>
 
+        <import type="com.pvr.jetpack.R" />
+
         <variable
-            name="data"
-            type="com.pvr.jetpack.databinding.BindingViewModel" />
+            name="numberViewModel"
+            type="com.pvr.jetpack.databinding.NumberViewModel" />
+
+        <variable
+            name="studentViewModel"
+            type="com.pvr.jetpack.databinding.StudentViewModel" />
+
+        <variable
+            name="progressViewModel"
+            type="com.pvr.jetpack.databinding.ProgressViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:orientation="vertical"
         tools:context=".databinding.DataBindingActivity">
 
         <TextView
-            android:id="@+id/mNumberTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{data.MNumber.toString()}"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@id/btn"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:text="基础功能"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{numberViewModel.MNumber.toString()}" />
 
         <Button
-            android:id="@+id/btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="@{()->data.setNumber()}"
-            android:text="login"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/mNumberTV" />
+            android:onClick="@{()->numberViewModel.setNumber()}"
+            android:text="set number" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Observable"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(studentViewModel.MStudent.age)}" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->studentViewModel.setStudent()}"
+            android:text="set name" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="双向绑定"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{progressViewModel.MProgress.toString()}" />
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="100dp"
+            android:max="5"
+            android:progress="@={progressViewModel.MProgress.progress}" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->progressViewModel.getProgress()}"
+            android:text="get progress" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="BindingAdapter"
+            android:textColor="@android:color/black" />
+
+        <ImageView
+            setIV="@{R.color.colorPrimary}"
+            android:layout_width="100dp"
+            android:layout_height="20dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{"test"}' />
+
+    </LinearLayout>
 </layout>
